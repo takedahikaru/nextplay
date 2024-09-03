@@ -1,7 +1,7 @@
 "use client"; 
 
 import React, { useState } from 'react'; 
-import { Checkbox, FormControlLabel, IconButton, Stack, TextField, ToggleButton, Tooltip } from '@mui/material';
+import { Checkbox, FormControlLabel, IconButton, Stack, TextField, ToggleButton, Tooltip, Typography } from '@mui/material';
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
 import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
@@ -18,7 +18,7 @@ export default function Page() {
     <div className="battle-wrapper">
 
 
-      <Tooltip title="切り替え" placement="top" arrow>
+      <Tooltip title="先攻・後攻切り替え" placement="top" arrow>
         <IconButton
           // onClick={() => {
             
@@ -39,11 +39,12 @@ export default function Page() {
         className="battle"
       >
         {/* 上段プレーヤー */}
-        <div className="battle-player-1 bg-red-300">
+        <div className="battle-player-1 bg-red-300 text-xl">
           <TextField 
             variant="standard"
             value={player1}
             onChange={(e) => { setPlayer1(e.target.value) }}
+            inputProps={{ sx: { fontSize: "2rem" } }}
           />
           {first && <DoneCheckInTurn />}
         </div>
@@ -81,6 +82,7 @@ export default function Page() {
             variant="standard"
             value={player2}
             onChange={(e) => { setPlayer2(e.target.value) }}
+            inputProps={{ sx: { fontSize: "2rem" } }}
           />
           {!first && <DoneCheckInTurn />}
         </div>
@@ -108,7 +110,7 @@ const DoneCheckInTurn = () => {
       }}
     >
       <FormControlLabel
-        label="Label1"
+        label={<Typography className="text-xl">ドロー</Typography>}
         control={
           <Checkbox
             checked={doneDraw}
@@ -116,33 +118,12 @@ const DoneCheckInTurn = () => {
             color="success"
             icon={<PanoramaFishEyeIcon />}
             checkedIcon={<TaskAltIcon />}
-            style={{
-              padding: 0,
-              borderRadius: '0',
-            }}
           />
         }
       />
 
       <FormControlLabel
-        label="Label1"
-        control={
-          <Checkbox
-            checked={doneEnergy}
-            onChange={(e) => setDoneEnergy(e.target.checked)}
-            color="success"
-            icon={<PanoramaFishEyeIcon />}
-            checkedIcon={<TaskAltIcon />}
-            style={{
-              padding: 0,
-              borderRadius: '0',
-            }}
-          />
-        }
-      />
-
-      <FormControlLabel
-        label="Label1"
+        label="サポート"
         control={
           <Checkbox
             checked={doneSupport}
@@ -159,7 +140,24 @@ const DoneCheckInTurn = () => {
       />
 
       <FormControlLabel
-        label="Label1"
+        label="エネルギー"
+        control={
+          <Checkbox
+            checked={doneEnergy}
+            onChange={(e) => setDoneEnergy(e.target.checked)}
+            color="success"
+            icon={<PanoramaFishEyeIcon />}
+            checkedIcon={<TaskAltIcon />}
+            style={{
+              padding: 0,
+              borderRadius: '0',
+            }}
+          />
+        }
+      />
+
+      <FormControlLabel
+        label="ワザ・終わり"
         control={
           <Checkbox
             checked={doneAttack}

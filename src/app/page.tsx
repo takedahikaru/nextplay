@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from 'next/link';
 
+import { Stack } from '@mui/material';
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -17,92 +19,103 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+            Ta.K.P
           </a>
         </div>
       </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        {/* <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        /> */}
+      <div className="">
+        <Stack
+          direction="row"
+          sx={{
+            justifyContent: "cente",
+            alignItems: "center",
+            width: "100%",
+            height: "50px",
+          }}
+          className="text-5xl"
+        >
+          <h1>
+            チョキン，パチン，ストン
+          </h1>
+        </Stack>
+      </div>
+
+      <div className="">
+        <Stack
+          direction="row"
+          sx={{
+            justifyContent: "cente",
+            alignItems: "center",
+            width: "100%",
+            height: "50px",
+          }}
+          className="text-gray-500"
+        >
+          <div>
+            アカウントは不要です。<br />
+            広告表示はありません。<br />
+            利益も責任も取りません。<br />
+            自由に遊んでください。
+          </div>
+          <div>
+            No account.<br />
+            No ads.<br />
+            No profits or responsibilities.<br />
+            Just play peacefully.
+          </div>
+        </Stack>
       </div>
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <Link href="/battle">
           <h2 className="mb-3 text-2xl font-semibold">
-            battle{" "}
+            やるか？ポケカ！{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Pokeca battle.
+            Players turn switcher for Pokemon card battle.
           </p>
         </Link>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href="/bingo">
           <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
+            ビンゴ！{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+            Comming soon.
           </p>
-        </a>
+        </Link>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href="/none">
           <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
+            準備中{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
+            Comming soon.
           </p>
-        </a>
+        </Link>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href="/none">
           <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
+            準備中{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            Comming soon.
           </p>
-        </a>
+        </Link>
+
       </div>
     </main>
   );
